@@ -1,0 +1,64 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import {ServiceService} from './service.service';
+import {HttpClientModule } from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
+import { AppComponent } from './app.component';
+import { FormsModule} from '@angular/forms';
+import { ArulComponent } from './arul/arul.component';
+import {RouterModule,Routes} from '@angular/router';
+import { MeanstackComponent } from './meanstack/meanstack.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdmincontentComponent } from './admincontent/admincontent.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { QuestionComponent } from './question/question.component';
+import { TestComponent } from './test/test.component';
+import { SetComponent } from './set/set.component';
+
+// import { Mat-card } from '@angular/material';
+
+const routes:Routes=[
+
+{path:'arul',component:ArulComponent},{
+  path:'meanstack',component:MeanstackComponent
+},{
+  path:'admin',component:AdminComponent
+}
+,
+{
+  path:'profile',component:ProfileComponent
+},{
+  path:'userdetails',component:UserdetailsComponent
+},
+{
+  path:'test',component:TestComponent
+},
+{
+  path:'set',component:SetComponent
+}
+
+
+];
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ArulComponent,
+    MeanstackComponent,
+    AdminComponent,
+    AdmincontentComponent,
+    ProfileComponent,
+    UserdetailsComponent,
+    QuestionComponent,
+    TestComponent,
+    SetComponent
+  ],
+  imports: [
+    BrowserModule,HttpClientModule,ReactiveFormsModule,FormsModule,RouterModule.forRoot(routes)
+  ],
+  providers: [ServiceService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
